@@ -5,38 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400">
-    <Window.Resources>
-        <local:MainViewModel x:Key="mainViewObj" Name="高攻放" Status="0"/>
-    </Window.Resources>
+        Title="MainWindow" Height="450" Width="400">
+   
+   
     <Grid  >
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+        
 
-            <RowDefinition Height="25"/>
-        </Grid.RowDefinitions>
-
-        <Grid VerticalAlignment="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-                <RowDefinition Height="25"/>
-            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="5*"/>
 
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="0">设备名称</Label>
-            <TextBox x:Name="txtName" Text="{Binding Name,Source={StaticResource mainViewObj }}"  Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Width="197"></TextBox>
-            <Label Grid.Column="0" Grid.Row="1">设备状态</Label>
-            <TextBox Text="{Binding Status,Source={StaticResource mainViewObj }}" Grid.Column="1" Grid.Row="1" Margin="0.5,0,0,0" Height="25" VerticalAlignment="Bottom"/>
+        <local:UCWeather ></local:UCWeather>
+        <local:UCWarning Grid.Column="1"/>
 
-        </Grid>
-        <Grid Grid.Row="1">
-            <Button Content="更改设备状态"></Button>
-        </Grid>
 
     </Grid>
 </Window>

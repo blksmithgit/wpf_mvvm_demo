@@ -54,9 +54,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Framework.cs" />
-    <Compile Include="SetValueWindow.xaml.cs">
-      <DependentUpon>SetValueWindow.xaml</DependentUpon>
+    <Compile Include="Framework\EventServer.cs" />
+    <Compile Include="Framework\IEventServer.cs" />
+    <Compile Include="Framework\IOCService.cs" />
+    <Compile Include="Framework\ObservableObject.cs" />
+    <Compile Include="Framework\DelegateCommand.cs" />
+    <Compile Include="Model\DataServer.cs" />
+    <Compile Include="Model\IDataServer.cs" />
+    <Compile Include="Model\WarningService.cs" />
+    <Compile Include="ViewModel\WarningViewModel.cs" />
+    <Compile Include="ViewModel\WeatherViewModel.cs" />
+    <Compile Include="View\UCWarning.xaml.cs">
+      <DependentUpon>UCWarning.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UCWeather.xaml.cs">
+      <DependentUpon>UCWeather.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -66,13 +78,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Device.cs" />
-    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Model\PM25Model.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="SetValueWindow.xaml">
+    <Page Include="View\UCWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UCWeather.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,5 +118,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

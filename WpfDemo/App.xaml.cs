@@ -13,5 +13,12 @@ namespace WpfDemo
     /// </summary>
     public partial class App : Application
     {
+        
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            IOCService.Instance.RegisterService("DATA_SERVICE", new DataServer());
+            IOCService.Instance.RegisterService("WARN_SERVICE", new WarningService());
+            base.OnStartup(e);
+        }
     }
 }

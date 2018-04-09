@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfDemo
 {
     /// <summary>
-    /// SetValue.xaml 的交互逻辑
+    /// UCWarning.xaml 的交互逻辑
     /// </summary>
-    public partial class SetValueWindow : Window
+    public partial class UCWarning : UserControl
     {
-        public SetValueWindow()
+        public UCWarning()
         {
             InitializeComponent();
         }
