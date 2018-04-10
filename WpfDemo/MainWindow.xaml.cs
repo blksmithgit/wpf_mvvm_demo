@@ -26,5 +26,10 @@ namespace WpfDemo
            
 
         }
+
+        private void UCWarning_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

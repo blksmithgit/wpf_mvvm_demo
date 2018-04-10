@@ -11,7 +11,7 @@ namespace WpfDemo
     {
         string _cityName = "北京";
         string _pm25 = "10";
-        string _statuscolor = "Green";
+        string _statuscolor = "BLACK";
 
 
         public WeatherViewModel()
@@ -27,6 +27,10 @@ namespace WpfDemo
             var data = service.GetData();
             CityName = data.CityName;
             PM25 = data.Pm25.ToString("0.00");
+            if (data.Status == PM25Status.NORMAL)
+                StatusColor = "GREEN";
+            else
+                StatusColor = "RED";
 
         }
 

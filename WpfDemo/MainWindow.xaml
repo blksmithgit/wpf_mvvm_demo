@@ -17,8 +17,8 @@
                 <ColumnDefinition Width="5*"/>
 
             </Grid.ColumnDefinitions>
-        <local:UCWeather ></local:UCWeather>
-        <local:UCWarning Grid.Column="1"/>
+        <local:UCWeather  ></local:UCWeather>
+        <local:UCWarning Grid.Column="1" Loaded="UCWarning_Loaded"/>
 
 
     </Grid>

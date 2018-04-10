@@ -3,26 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace WpfDemo
 {
-    public class WarningViewModel:ObservableObject
+    public class WarningViewModel : ObservableObject
     {
-        private float _limit = 100;
-
         
+
+        public WarningViewModel()
+        {
+            Limit = Service.WarningLimit.ToString("0.00");
+        }
+
+
+
         public string Limit
+        {
+            get;set;
+        }
+     
+
+
+        public ICommand UpdateLimitCommand
         {
             get
             {
-                return _limit.ToString("0.00");
-            
+                return new DelegateCommand(UpdateLimit);
             }
-            set
+        }
+
+        IWarningService Service
+        {
+            get
             {
-                _limit = float.Parse(value);
-                
+                return IOCService.Instance.QueryService("WARN_SERVICE") as IWarningService;
             }
-        } 
+        }
+
+        void UpdateLimit()
+        {
+            Service.WarningLimit = double.Parse(Limit);
+        }
     }
 }

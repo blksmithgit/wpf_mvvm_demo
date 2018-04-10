@@ -18,11 +18,11 @@
 
 
             <StackPanel  >
-                <Label Content="Label" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-            <TextBox Text="{Binding Limit }"></TextBox>
+                <Label Content="雾霾告警阈值" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="25"/>
+            <TextBox Text="{Binding Limit }" Height="25"></TextBox>
                 
             </StackPanel>
-            <Button Grid.Row="1" Height="25" VerticalAlignment="Bottom">设置告警限</Button>
+        <Button Command="{Binding Path=UpdateLimitCommand}" Grid.Row="1" Height="25" VerticalAlignment="Bottom">设置告警限</Button>
         
        
 

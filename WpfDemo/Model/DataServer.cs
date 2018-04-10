@@ -13,12 +13,13 @@ namespace WpfDemo
 
         public DataServer()
         {
-          
+
+            _Data.CityName = "北京";
             EventServer.Instance.RegisterEventListener("LIMIT_CHANGE", ChangeLimit);
         }
 
 
-        public void ChangeLimit(EventArgs e)
+        private void ChangeLimit(EventArgs e)
         {
             _Data.Status = CalcStatus(_Data.Pm25);
 

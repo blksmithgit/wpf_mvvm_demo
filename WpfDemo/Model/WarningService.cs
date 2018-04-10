@@ -8,13 +8,17 @@ namespace WpfDemo
 {
     public interface IWarningService
     {
-        float WarningLimit { get; set; }
+        double WarningLimit { get; set; }
+        
 
     }
+
+
+    
     public class WarningService : IWarningService
     {
-        private float _WarningLimit;
-        public float WarningLimit { get => _WarningLimit;
+        private double _WarningLimit=100;
+        public double WarningLimit { get => _WarningLimit;
             set {
                 _WarningLimit = value;
                 EventServer.Instance.TriggerEvent("LIMIT_CHANGE", new EventArgs());
